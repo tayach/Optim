@@ -4,7 +4,7 @@ import time
 from google.cloud import firestore
 
 
-def get_llm_response(prompt, model="gpt-4o"):
+def get_llm_response(prompt, model="gpt-4o-mini"):
     client = current_app.clients["openai_client"]
     print(current_app.clients.keys())
     completion = client.chat.completions.create(

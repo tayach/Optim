@@ -43,7 +43,7 @@ class StructuredLLM:
         return structured_response
 
 
-def get_structured_llm(schema, model="gpt-4o"):
+def get_structured_llm(schema, model="gpt-4o-mini"):
     if model in ["gpt-4o", "gpt-4o-mini"]:
         return ChatOpenAI(model=model).with_structured_output(schema)
     elif model in ["o1-mini", "o1-preview"]:

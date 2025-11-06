@@ -11,7 +11,7 @@ class CodeFix(BaseModel):
     code: str = Field(description="The new fixed version of the code")
 
 
-def fix_code(data, model="gpt-4o"):
+def fix_code(data, model="gpt-4o-mini"):
     code = data["code"]
     error_message = data["error_message"]
     solver = data["solver"]
