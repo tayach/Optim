@@ -12,7 +12,7 @@ class CodeClause(BaseModel):
     )
 
 
-def code_clause(data, model="gpt-4o-mini"):
+def code_clause(data, model=None):
     structured_llm = get_structured_llm(CodeClause, model)
     clause_type = data["clauseType"]
     clause = data["clause"]
