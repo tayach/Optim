@@ -97,7 +97,7 @@ class StructureResponse(BaseModel):
     )
 
 
-def detect_structure(description, model="gpt-4o"):
+def detect_structure(description, model=None):
     structured_llm = get_structured_llm(StructureResponse, model)
 
     prompt = prompt_template.format(description=description)

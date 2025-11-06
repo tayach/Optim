@@ -3,12 +3,16 @@ from flask import current_app
 import time
 from google.cloud import firestore
 
+from api.app.functionalities.utils import get_chat_model
 
-def get_llm_response(prompt, model="gpt-4o"):
+
+def get_llm_response(prompt, model=None):
     client = current_app.clients["openai_client"]
+    resolved_model = get_chat_model(model)
     print(current_app.clients.keys())
+    print(f"[LLM] Using chat model: {resolved_model}")
     completion = client.chat.completions.create(
-        model=model,
+        model=resolved_model,
         messages=[
             {"role": "user", "content": prompt},
         ],

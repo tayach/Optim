@@ -31,7 +31,7 @@ class FormulatedClause(BaseModel):
     )
 
 
-def formulate_clause(data, model="gpt-4o"):
+def formulate_clause(data, model=None):
 
     structured_llm = get_structured_llm(FormulatedClause, model)
     clause_type = data["clauseType"]

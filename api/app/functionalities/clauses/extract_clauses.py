@@ -31,7 +31,7 @@ class ExtractedClauses(BaseModel):
     objective: str = Field(description="Objective of the problem")
 
 
-def extract_clauses(data, model="gpt-4o"):
+def extract_clauses(data, model=None):
     structured_llm = get_structured_llm(ExtractedClauses, model)
     formatted_description = data["formattedDescription"]
 

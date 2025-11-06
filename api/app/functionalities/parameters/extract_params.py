@@ -46,7 +46,7 @@ class FormattedProblem(BaseModel):
     background: str = Field(description="A 2-3 sentence summary of the problem.")
 
 
-def extract_params(data, model="gpt-4o"):
+def extract_params(data, model=None):
     structured_llm = get_structured_llm(FormattedProblem, model)
     description = data["problemDescription"]
     problem_type, explanation = detect_structure(description)
